@@ -4,7 +4,7 @@ Testes para o AI Research Assistant
 
 import pytest
 from pathlib import Path
-from mcp_server import AIResearchAssistant, ResearchArea, Paper
+from ai_research_assistant import AIResearchAssistant, ResearchArea, Paper
 
 
 def test_research_area_enum():

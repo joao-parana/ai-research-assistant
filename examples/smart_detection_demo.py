@@ -5,7 +5,7 @@ Demonstra como o sistema agora detecta tecnologias de múltiplas fontes
 """
 
 from pathlib import Path
-from mcp_server import AIResearchAssistant, ProjectMetadataExtractor
+from ai_research_assistant import AIResearchAssistant, ProjectMetadataExtractor
 
 
 def demo_metadata_extraction():
@@ -17,7 +17,7 @@ def demo_metadata_extraction():
     ╚════════════════════════════════════════════════════════════╝
     """)
     
-    # Usar o próprio projeto mcp-server como exemplo
+    # Usar o próprio projeto ai-research-assistant como exemplo
     project_path = Path(__file__).parent.parent
     
     print(f"📂 Projeto: {project_path.name}\n")
@@ -155,14 +155,14 @@ def main():
     🎯 Agora você pode:
     
     1. Executar no seu projeto:
-       mcp-server /path/to/your/project
+       ai-research-assistant /path/to/your/project
     
     2. Ver detecção automática de MCP e outras tecnologias
     
     3. Receber papers e sugestões relevantes
     
     4. Usar a API programaticamente:
-       from mcp_server import AIResearchAssistant
+       from ai_research_assistant import AIResearchAssistant
        assistant = AIResearchAssistant("/path")
        assistant.analyze_project()
         """)

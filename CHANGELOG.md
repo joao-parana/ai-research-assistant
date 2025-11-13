@@ -31,7 +31,7 @@ e este projeto adere ao [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Modern type hints
 
 ### CLI Tools
-- `mcp-server`: Análise principal de projetos
+- `ai-research-assistant`: Análise principal de projetos
 - `mcp-demo`: Demonstração interativa
 - `mcp-analyze`: Integração MCP completa
 

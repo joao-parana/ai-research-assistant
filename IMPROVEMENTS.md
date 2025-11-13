@@ -2,7 +2,7 @@
 
 ## Problema Original
 
-Quando executado `mcp-server $(pwd)` no próprio projeto, o sistema **não reconhecia** a keyword `mcp` definida em `pyproject.toml`, usando apenas uma lista hard-coded de tecnologias.
+Quando executado `ai-research-assistant $(pwd)` no próprio projeto, o sistema **não reconhecia** a keyword `mcp` definida em `pyproject.toml`, usando apenas uma lista hard-coded de tecnologias.
 
 ## Solução Implementada
 
@@ -85,7 +85,7 @@ if "mcp" in str(area).lower():
 Agora quando você executa:
 
 ```bash
-mcp-server $(pwd)
+ai-research-assistant $(pwd)
 ```
 
 O sistema:
@@ -99,7 +99,7 @@ O sistema:
 ## Exemplo de Output
 
 ```
-🔍 Analisando projeto: mcp-server
+🔍 Analisando projeto: ai-research-assistant
 
    📦 Extraindo metadados do projeto...
       ✓ pyproject.toml encontrado
@@ -114,11 +114,11 @@ O sistema:
       ✓ Detectado 'NumPy' via dependência
       ✓ Detectado 'Pandas' via dependência
 
-📦 PROJETO: mcp-server
+📦 PROJETO: ai-research-assistant
 📁 Arquivos analisados: 5
 
 📦 METADADOS DO PROJETO:
-   • Nome: mcp-server
+   • Nome: ai-research-assistant
    • Versão: 1.0.0
    • Keywords: mcp, Model Context Protocol, ai, research
    • Dependências: 6 principais
@@ -163,7 +163,7 @@ dependencies = [
 Para testar:
 
 ```bash
-cd /Users/joao/dev/code_with_ai/claude/claude/python/mcp-server
+cd /Users/joao/dev/code_with_ai/claude/claude/python/ai-research-assistant
 
 # Reinstalar com nova dependência
 pip install -e .
@@ -172,16 +172,16 @@ pip install -e .
 hatch env create
 
 # Executar no próprio projeto
-mcp-server $(pwd)
+ai-research-assistant $(pwd)
 ```
 
 ## Código Atualizado
 
 Os arquivos modificados foram:
 
-1. ✅ `src/mcp_server/ai_research_assistant.py` - Lógica principal
+1. ✅ `src/ai_research_assistant/ai_research_assistant.py` - Lógica principal
 2. ✅ `pyproject.toml` - Adicionado `tomli` dependency
-3. ✅ `src/mcp_server/__init__.py` - Exports atualizados
+3. ✅ `src/ai_research_assistant/__init__.py` - Exports atualizados
 4. ✅ `IMPROVEMENTS.md` - Esta documentação
 
 ---

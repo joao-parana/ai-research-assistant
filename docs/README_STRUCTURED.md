@@ -85,7 +85,7 @@ Keywords para papers.
 
 ```bash
 # 1. Criar README estruturado
-mcp-server $(pwd)
+ai-research-assistant $(pwd)
 
 # 2. Sistema detecta automaticamente!
 ```
@@ -93,7 +93,7 @@ mcp-server $(pwd)
 ## API
 
 ```python
-from mcp_server.readme_parser import ReadmeParser
+from ai_research_assistant.readme_parser import ReadmeParser
 
 parser = ReadmeParser()
 metadata = parser.parse(Path("README.md"))

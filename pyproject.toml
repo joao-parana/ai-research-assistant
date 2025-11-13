@@ -3,15 +3,15 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "mcp-server"
+name = "ai-research-assistant"
 version = "0.5.0"
-description = "AI Research Assistant - Integração completa de MCPs com Python 3.13"
+description = "AI Research Assistant - Integração completa de MCPs com Python 3.13 para produzir um assistente de pesquisa"
 readme = "README.md"
 requires-python = ">=3.13"
 license = "MIT"
-keywords = ["mcp", "Model Context Protocol", "ai", "research", "machine-learning", "huggingface"]
+keywords = ["mcp", "Model Context Protocol", "ai", "research", "assistant", "research assistant", "machine-learning", "huggingface"]
 authors = [
-    { name = "João", email = "joao@example.com" },
+    { name = "João Antonio Ferreira", email = "joao.parana@gmail.com" },
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -41,7 +41,7 @@ dev = [
     "pip-tools",
 ]
 
-# Alé de `dev` podemos usar outras seções no elemento `project.optional-dependencies`
+# Além de `dev` podemos usar outras seções no elemento `project.optional-dependencies`
 # ------------------------------------------------------------------------------------------
 # Nome da Seção     Propósito Comum
 # ------------------------------------------------------------------------------------------
@@ -61,17 +61,17 @@ dev = [
 # metadados de dependência principal do pacote gerada na etapa de build
 
 [project.urls]
-Documentation = "https://github.com/joao/mcp-server#readme"
-Issues = "https://github.com/joao/mcp-server/issues"
-Source = "https://github.com/joao/mcp-server"
+Documentation = "https://github.com/joao-parana/ai-research-assistant#readme"
+Issues = "https://github.com/joao-parana/ai-research-assistant/issues"
+Source = "https://github.com/joao-parana/ai-research-assistant"
 
 [project.scripts]
-mcp-server = "mcp_server.cli:main"
-mcp-analyze = "mcp_server.integrate_mcps:main"
-mcp-demo = "mcp_server.demo_usage:main"
+ai-research-assistant = "ai_research_assistant.cli:main"
+mcp-analyze = "ai_research_assistant.integrate_mcps:main"
+mcp-demo = "ai_research_assistant.demo_usage:main"
 
 [tool.hatch.version]
-path = "src/mcp_server/__init__.py"
+path = "src/ai_research_assistant/__init__.py"
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -82,7 +82,7 @@ include = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/mcp_server"]
+packages = ["src/ai_research_assistant"]
 
 [tool.hatch.envs.default]
 dependencies = [
@@ -92,8 +92,8 @@ dependencies = [
 
 [tool.hatch.envs.default.scripts]
 test = "pytest {args:tests}"
-test-cov = "pytest --cov=src/mcp_server --cov-report=term-missing {args:tests}"
-cov-report = "pytest --cov=src/mcp_server --cov-report=html"
+test-cov = "pytest --cov=src/ai_research_assistant --cov-report=term-missing {args:tests}"
+cov-report = "pytest --cov=src/ai_research_assistant --cov-report=html"
 
 [tool.hatch.envs.lint]
 detached = true
@@ -104,7 +104,7 @@ dependencies = [
 ]
 
 [tool.hatch.envs.lint.scripts]
-typing = "mypy --install-types --non-interactive {args:src/mcp_server tests}"
+typing = "mypy --install-types --non-interactive {args:src/ai_research_assistant tests}"
 style = [
     "ruff {args:.}",
     "black --check --diff {args:.}",

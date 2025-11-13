@@ -6,7 +6,7 @@ CLI principal para o MCP Server
 import sys
 from pathlib import Path
 
-from mcp_server.ai_research_assistant import main as assistant_main
+from ai_research_assistant.ai_research_assistant import main as assistant_main
 
 
 def main():

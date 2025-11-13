@@ -28,7 +28,7 @@
 ### Instalação
 
 ```bash
-cd /Users/joao/dev/code_with_ai/claude/claude/python/mcp-server
+cd /Users/joao/dev/code_with_ai/claude/claude/python/ai-research-assistant
 
 # Usando Hatch (recomendado)
 hatch env create
@@ -50,10 +50,10 @@ pip-compile --extra dev -o dev-requirements.txt pyproject.toml
 
 ```bash
 # Usando script instalado
-mcp-server /path/to/your/project
+ai-research-assistant /path/to/your/project
 
 # Ou diretamente
-python -m mcp_server.ai_research_assistant /path/to/your/project
+python -m ai_research_assistant.ai_research_assistant /path/to/your/project
 ```
 
 #### 2️⃣ Demo Interativa
@@ -77,12 +77,12 @@ mcp-analyze --project ./meu-projeto --output relatorio.json
 ## 📦 Estrutura do Projeto
 
 ```
-mcp-server/
+ai-research-assistant/
 ├── pyproject.toml              # Configuração Hatch
 ├── README.md                   # Este arquivo
 ├── LICENSE                     # Licença MIT
 ├── src/
-│   └── mcp_server/
+│   └── ai_research_assistant/
 │       ├── __init__.py         # Package init
 │       ├── ai_research_assistant.py  # 🧠 Assistente principal
 │       ├── demo_usage.py       # 🎯 Demonstração
@@ -215,7 +215,7 @@ hatch publish
 ### 1. Análise de Partial Discharge
 
 ```python
-from mcp_server import AIResearchAssistant, ResearchArea
+from ai_research_assistant import AIResearchAssistant, ResearchArea
 
 # Analisar projeto
 assistant = AIResearchAssistant("/path/to/gamma-pd-analytics")
@@ -234,7 +234,7 @@ report = assistant.generate_report()
 ### 2. Integração Programática
 
 ```python
-from mcp_server.integrate_mcps import MCPIntegrator, MCPConfig
+from ai_research_assistant.integrate_mcps import MCPIntegrator, MCPConfig
 from pathlib import Path
 
 # Configurar
@@ -314,7 +314,7 @@ Contribuições são bem-vindas! Algumas ideias:
 
 ```bash
 # Fork e clone o repositório
-git clone https://github.com/your-username/mcp-server.git
+git clone https://github.com/your-username/ai-research-assistant.git
 
 # Crie um branch
 git checkout -b feature/nova-feature

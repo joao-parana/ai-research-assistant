@@ -4,7 +4,7 @@ Testes para o ReadmeParser
 
 import pytest
 from pathlib import Path
-from mcp_server.readme_parser import ReadmeParser, ResearchMetadata, create_research_readme_template
+from ai_research_assistant.readme_parser import ReadmeParser, ResearchMetadata, create_research_readme_template
 
 
 def test_parse_research_focus(tmp_path):

@@ -27,7 +27,7 @@ hatch --version
 ### 1. Navegue até o diretório do projeto
 
 ```bash
-cd /Users/joao/dev/code_with_ai/claude/claude/python/mcp-server
+cd /Users/joao/dev/code_with_ai/claude/claude/python/ai-research-assistant
 ```
 
 ### 2. Crie o ambiente virtual com Hatch
@@ -59,7 +59,7 @@ pip install -e ".[dev]"
 
 ```bash
 # Comando principal
-mcp-server --help
+ai-research-assistant --help
 
 # Demo
 mcp-demo
@@ -94,7 +94,7 @@ Crie um arquivo `.env` na raiz do projeto:
 ```bash
 # .env
 HUGGINGFACE_TOKEN=your_token_here
-POSTGRES_URL=postgresql://localhost/mcp_server
+POSTGRES_URL=postgresql://localhost/ai_research_assistant
 ```
 
 ### Configuração do IDE
@@ -126,7 +126,7 @@ Crie `.vscode/settings.json`:
 ### 1. Análise de Projeto
 
 ```bash
-mcp-server /path/to/your/project
+ai-research-assistant /path/to/your/project
 ```
 
 ### 2. Demo Completa
@@ -144,7 +144,7 @@ mcp-analyze --project /path/to/project --output report.json
 ### 4. Uso Programático
 
 ```python
-from mcp_server import AIResearchAssistant
+from ai_research_assistant import AIResearchAssistant
 
 assistant = AIResearchAssistant("/path/to/project")
 assistant.analyze_project()
@@ -191,13 +191,13 @@ hatch build
 ```
 
 Isso cria:
-- `dist/mcp_server-1.0.0.tar.gz` (source distribution)
-- `dist/mcp_server-1.0.0-py3-none-any.whl` (wheel)
+- `dist/ai_research_assistant-1.0.0.tar.gz` (source distribution)
+- `dist/ai_research_assistant-1.0.0-py3-none-any.whl` (wheel)
 
 ### Instalar localmente a partir do wheel
 
 ```bash
-pip install dist/mcp_server-1.0.0-py3-none-any.whl
+pip install dist/ai_research_assistant-1.0.0-py3-none-any.whl
 ```
 
 ## Troubleshooting
@@ -237,7 +237,7 @@ hatch shell
 ## Próximos Passos
 
 1. ✅ Execute `mcp-demo` para ver todas as capacidades
-2. ✅ Analise seu projeto: `mcp-server /path/to/project`
+2. ✅ Analise seu projeto: `ai-research-assistant /path/to/project`
 3. ✅ Leia o README.md para mais detalhes
 4. ✅ Explore os exemplos em `examples/`
 

@@ -82,7 +82,7 @@ shell: ## Abre shell do Hatch
 
 version: ## Mostra versão
 	@echo "$(BLUE)MCP Server$(NC)"
-	@python -c "from mcp_server import __version__; print(f'Version: {__version__}')"
+	@python -c "from ai_research_assistant import __version__; print(f'Version: {__version__}')"
 
 deps: ## Lista dependências
 	@echo "$(BLUE)Dependências instaladas:$(NC)"

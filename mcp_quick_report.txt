@@ -3,7 +3,7 @@
 ║          🤖 AI RESEARCH ASSISTANT - REPORT                  ║
 ╚══════════════════════════════════════════════════════════════╝
 
-📦 PROJETO: mcp-server
+📦 PROJETO: ai-research-assistant
 📁 Arquivos analisados: 8
 
 🔧 TECNOLOGIAS DETECTADAS:

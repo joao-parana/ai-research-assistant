@@ -5,7 +5,7 @@ Exemplo rápido de uso do MCP Server
 """
 
 from pathlib import Path
-from mcp_server import AIResearchAssistant, ResearchArea
+from ai_research_assistant import AIResearchAssistant, ResearchArea
 
 
 def main():

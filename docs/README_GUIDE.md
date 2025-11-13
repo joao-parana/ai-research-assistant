@@ -12,7 +12,7 @@ Você agora pode criar um **README.md estruturado** no seu projeto que serve com
 cd /path/to/your/project
 
 # Criar template automaticamente
-python -c "from mcp_server.readme_parser import create_research_readme_template; from pathlib import Path; create_research_readme_template(Path('README.md'), 'My Project')"
+python -c "from ai_research_assistant.readme_parser import create_research_readme_template; from pathlib import Path; create_research_readme_template(Path('README.md'), 'My Project')"
 ```
 
 ### 2. Editar Seções
@@ -36,7 +36,7 @@ Edite o `README.md` gerado com suas informações:
 ### 3. Executar Análise
 
 ```bash
-mcp-server $(pwd)
+ai-research-assistant $(pwd)
 ```
 
 O sistema irá:
@@ -189,7 +189,7 @@ papers = search_papers(queries)
 ### Antes (Sem README Estruturado)
 
 ```bash
-mcp-server $(pwd)
+ai-research-assistant $(pwd)
 
 # Output:
 🔧 TECNOLOGIAS DETECTADAS:
@@ -203,7 +203,7 @@ mcp-server $(pwd)
 ### Depois (Com README Estruturado)
 
 ```bash
-mcp-server $(pwd)
+ai-research-assistant $(pwd)
 
 # Output:
 📄 Extraindo metadados de pesquisa do README...
@@ -295,7 +295,7 @@ pytest tests/test_metadata_extraction.py::test_detect_mcp_from_keywords -v
 ### Testar Manualmente
 
 ```python
-from mcp_server.readme_parser import ReadmeParser
+from ai_research_assistant.readme_parser import ReadmeParser
 from pathlib import Path
 
 parser = ReadmeParser()
@@ -341,7 +341,7 @@ class ResearchMetadata:
 ### Criar Template
 
 ```python
-from mcp_server.readme_parser import create_research_readme_template
+from ai_research_assistant.readme_parser import create_research_readme_template
 
 create_research_readme_template(
     output_path=Path("README.md"),
@@ -390,7 +390,7 @@ Some paragraph text here.  # ❌ Não será detectado
 1. **Início do Projeto**
    ```bash
    # Criar template
-   python -m mcp_server.readme_parser
+   python -m ai_research_assistant.readme_parser
    ```
 
 2. **Durante Desenvolvimento**
@@ -403,7 +403,7 @@ Some paragraph text here.  # ❌ Não será detectado
 3. **Revisões Periódicas**
    ```bash
    # Executar análise
-   mcp-server $(pwd)
+   ai-research-assistant $(pwd)
    
    # Revisar papers sugeridos
    # Ajustar README com novos insights
@@ -419,7 +419,7 @@ Some paragraph text here.  # ❌ Não será detectado
 ## 🎉 Próximos Passos
 
 1. ✅ Crie seu README estruturado
-2. ✅ Execute `mcp-server $(pwd)`
+2. ✅ Execute `ai-research-assistant $(pwd)`
 3. ✅ Veja papers personalizados
 4. ✅ Refine baseado nos resultados
 5. ✅ Compartilhe com o time!

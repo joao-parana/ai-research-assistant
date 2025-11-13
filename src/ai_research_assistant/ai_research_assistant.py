@@ -14,7 +14,7 @@ import tomli  # Para ler pyproject.toml
 import re
 
 # Importar README parser
-from mcp_server.readme_parser import ReadmeParser, ResearchMetadata
+from ai_research_assistant.readme_parser import ReadmeParser, ResearchMetadata
 
 
 # ============================================================================

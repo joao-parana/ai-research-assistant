@@ -4,7 +4,7 @@ Testes para extração de metadados do projeto
 
 import pytest
 from pathlib import Path
-from mcp_server import (
+from ai_research_assistant import (
     ProjectMetadataExtractor,
     AIResearchAssistant,
     ResearchArea,

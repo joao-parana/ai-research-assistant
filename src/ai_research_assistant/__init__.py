@@ -16,7 +16,7 @@ Features:
 __version__ = "1.0.0"
 __author__ = "João"
 
-from mcp_server.ai_research_assistant import (
+from ai_research_assistant.ai_research_assistant import (
     AIResearchAssistant,
     Paper,
     Model,
@@ -26,7 +26,7 @@ from mcp_server.ai_research_assistant import (
     ResearchArea,
 )
 
-from mcp_server.readme_parser import (
+from ai_research_assistant.readme_parser import (
     ReadmeParser,
     ResearchMetadata,
     create_research_readme_template,
