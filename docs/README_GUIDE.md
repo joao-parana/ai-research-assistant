@@ -430,4 +430,4 @@ Some paragraph text here.  # ❌ Não será detectado
 **Exemplo:** `examples/RESEARCH_README_EXAMPLE.md`  
 **Testes:** `tests/test_readme_parser.py`
 
-**Versão:** MCP Server 1.0.0+
+**Versão:** MCP Server 0.5.0+

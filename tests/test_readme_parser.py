@@ -2,9 +2,10 @@
 Testes para o ReadmeParser
 """
 
-import pytest
-from pathlib import Path
-from ai_research_assistant.readme_parser import ReadmeParser, ResearchMetadata, create_research_readme_template
+from ai_research_assistant.readme_parser import (
+    ReadmeParser,
+    create_research_readme_template,
+)
 
 
 def test_parse_research_focus(tmp_path):
@@ -20,10 +21,10 @@ def test_parse_research_focus(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     assert metadata is not None
     assert len(metadata.research_focus) == 3
     assert "Machine Learning" in metadata.research_focus
@@ -41,10 +42,10 @@ def test_parse_research_questions(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     assert len(metadata.research_questions) == 2
     assert any("accuracy" in q.lower() for q in metadata.research_questions)
 
@@ -61,10 +62,10 @@ def test_parse_technologies(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     assert len(metadata.technologies) == 4
     assert "Python 3.13" in metadata.technologies
     assert "TensorFlow" in metadata.technologies
@@ -81,10 +82,10 @@ def test_parse_keywords(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     assert len(metadata.keywords) == 3
     assert "machine learning" in metadata.keywords
 
@@ -120,10 +121,10 @@ def test_parse_all_sections(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     assert len(metadata.research_focus) > 0
     assert len(metadata.research_questions) > 0
     assert len(metadata.technologies) > 0
@@ -149,11 +150,11 @@ def test_extract_research_queries(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
     queries = parser.extract_research_queries(metadata)
-    
+
     assert len(queries) > 0
     # Deve incluir research focus
     assert any("Anomaly Detection" in q for q in queries)
@@ -165,7 +166,7 @@ def test_parse_nonexistent_file(tmp_path):
     """Testa comportamento com arquivo inexistente"""
     parser = ReadmeParser()
     metadata = parser.parse(tmp_path / "NONEXISTENT.md")
-    
+
     assert metadata is None
 
 
@@ -173,10 +174,10 @@ def test_parse_empty_readme(tmp_path):
     """Testa parsing de README vazio"""
     readme_path = tmp_path / "README.md"
     readme_path.write_text("")
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     assert metadata is not None
     assert len(metadata.research_focus) == 0
 
@@ -193,10 +194,10 @@ def test_parse_with_markdown_formatting(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     # Deve remover formatação mas manter texto
     assert any("Python" in tech for tech in metadata.technologies)
     assert any("TensorFlow" in tech for tech in metadata.technologies)
@@ -218,10 +219,10 @@ def test_case_insensitive_headers(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     # Deve detectar todas variações
     assert len(metadata.research_focus) >= 2  # ML e AI
 
@@ -229,12 +230,12 @@ def test_case_insensitive_headers(tmp_path):
 def test_create_template(tmp_path):
     """Testa criação de template"""
     output_path = tmp_path / "TEMPLATE.md"
-    
+
     create_research_readme_template(output_path, "Test Project")
-    
+
     assert output_path.exists()
     content = output_path.read_text()
-    
+
     # Deve conter seções principais
     assert "## Research Focus" in content
     assert "## Research Questions" in content
@@ -253,10 +254,10 @@ def test_numbered_lists(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     assert len(metadata.methodology) == 3
     assert "Data preprocessing" in metadata.methodology
 
@@ -272,10 +273,10 @@ def test_mixed_list_styles(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     assert len(metadata.keywords) == 3
 
 
@@ -298,14 +299,14 @@ def test_query_generation_priority(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
     queries = parser.extract_research_queries(metadata)
-    
+
     # Deve incluir research focus (prioridade alta)
     assert any("Primary Focus" in q for q in queries)
-    
+
     # Deve incluir combinação de keywords
     assert any("key1" in q or "key2" in q for q in queries)
 
@@ -324,15 +325,15 @@ def test_section_aliases(tmp_path):
 """
     readme_path = tmp_path / "README.md"
     readme_path.write_text(readme_content)
-    
+
     parser = ReadmeParser()
     metadata = parser.parse(readme_path)
-    
+
     # Tech Stack -> Technologies
     assert len(metadata.technologies) > 0
-    
+
     # Key Questions -> Research Questions
     assert len(metadata.research_questions) > 0
-    
+
     # Objectives -> Goals
     assert len(metadata.goals) > 0

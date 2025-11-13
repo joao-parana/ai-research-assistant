@@ -1,0 +1,29 @@
+{
+  // Configurações específicas do projeto
+  "language_servers": ["pyright", "ruff"],
+  "formatter": {
+    "language_server": {
+      "name": "ruff"
+    }
+  },
+  "format_on_save": "on",
+  "remove_trailing_whitespace_on_save": true,
+  "ensure_final_newline_on_save": true,
+  "tab_size": 4,
+  "hard_tabs": false,
+  "preferred_line_length": 100,
+  
+  // Python específico
+  "languages": {
+    "Python": {
+      "format_on_save": "on",
+      "formatter": {
+        "language_server": {
+          "name": "ruff"
+        }
+      },
+      "tab_size": 4,
+      "hard_tabs": false
+    }
+  }
+}

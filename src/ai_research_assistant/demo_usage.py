@@ -4,9 +4,6 @@
 Exemplo de uso real com seu projeto gamma-pd-analytics
 """
 
-from pathlib import Path
-import json
-
 
 # ============================================================================
 # EXEMPLO 1: Análise do Projeto gamma-pd-analytics
@@ -147,7 +144,7 @@ class TransformerClassifier(nn.Module):
         print(f"\n{i}. {rec['technique']}")
         print(f"   📊 Accuracy: {rec['accuracy']}")
         print(f"   📚 Fonte: {rec['source']}")
-        print(f"\n   💻 Implementação sugerida:")
+        print("\n   💻 Implementação sugerida:")
         print("   " + "─" * 60)
         for line in rec["implementation"].split("\n"):
             print(f"   {line}")

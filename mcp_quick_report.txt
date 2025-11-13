@@ -4,50 +4,74 @@
 ╚══════════════════════════════════════════════════════════════╝
 
 📦 PROJETO: ai-research-assistant
-📁 Arquivos analisados: 8
+📁 Arquivos analisados: 12
 
-🔧 TECNOLOGIAS DETECTADAS:
+📦 METADADOS DO PROJETO:
+   • Nome: ai-research-assistant
+   • Versão: 0.5.0
+   • Keywords: mcp, Model Context Protocol, ai, research, assistant, research assistant, machine-learning, huggingface
+   • Dependências: 6 principais
+
+🔬 METADADOS DE PESQUISA (README):
+   • Research Focus: N/A
+   • Keywords: N/A
+   • Perguntas: 0 questões de pesquisa
+   • Objetivos: 0 objetivos definidos
+   • Metodologia: 0 etapas
+
+🔧 TECNOLOGIAS DETECTADAS (20):
+   • Convolutional Neural Networks
+   • Django
+   • FastAPI
+   • Flask
+   • Hatch
+   • Hugging Face Transformers
+   • LSTM Networks
+   • Matplotlib
+   • Model Context Protocol
    • NumPy
    • Pandas
-   • Matplotlib
-   • SciPy
-   • Scikit-learn
-   • TensorFlow
    • PyTorch
    • Pydantic
+   • Random Forest
+   • SciPy
+   • Scikit-learn
+   • Streamlit
+   • TensorFlow
+   • XGBoost
+   • pytest
+
+🔍 FONTES DE DETECÇÃO:
+   • Convolutional Neural Networks: code imports
+   • Django: code imports
+   • FastAPI: code imports
+   • Flask: code imports
+   • Hatch: code imports
+
 
 📚 PAPERS RELEVANTES ENCONTRADOS:
 
-1. Benchmarking ML and DL for Fault Detection in Power Transformers
-      Autores: Bhuvan Saravanan, Pasanth Kumar M D
-      Keywords: SVM, KNN, Random Forest, LSTM, 1D-CNN
+1. Benchmarking ML and DL for Fault Detection
+      Autores: Bhuvan Saravanan
+      Keywords: Random Forest, LSTM, 1D-CNN
       URL: https://hf.co/papers/2505.06295
       Upvotes: 1
 
-2. Enhancing Power Quality Event Classification with AI Transformers
-      Autores: Ahmad Mohammad Saber, Amr Youssef
-      Keywords: Transformers, Attention, Power Quality
-      URL: https://hf.co/papers/2402.14949
-      Upvotes: 0
-
-💡 SUGESTÕES DE MELHORIA:
+💡 SUGESTÕES DE MELHORIA (5):
 
    1. ✨ Considere usar numpy.vectorize para otimizar loops
    2. 📊 Use .query() e .eval() do Pandas para operações mais rápidas
-   3. 🤖 Paper encontrado: Random Forest alcançou 86.82% de accuracy para detecção de falhas
-   4. 🧠 Considere testar 1D-CNN (86.30% accuracy) para classificação temporal
-   5. ⚡ Transformers com attention podem melhorar classificação de eventos de qualidade
-   6. 🎯 Adicione validação cruzada (k-fold) na avaliação dos modelos
-   7. 📈 Implemente early stopping para evitar overfitting
-   8. 🔧 Use GridSearchCV ou RandomSearchCV para otimizar hiperparâmetros
+   3. 🔌 MCP detectado! Considere integrar com múltiplos serviços via MCP
+   4. 🎯 Adicione validação cruzada (k-fold) na avaliação dos modelos
+   5. 📈 Implemente early stopping para evitar overfitting
 
 ═══════════════════════════════════════════════════════════════
 
 🎯 PRÓXIMOS PASSOS:
 1. Revisar papers recomendados
-2. Implementar técnicas de ML/DL sugeridas
-3. Validar resultados com métricas apropriadas
-4. Considerar deployment com FastAPI ou Streamlit
+2. Implementar técnicas sugeridas
+3. Responder perguntas de pesquisa definidas
+4. Validar com métricas apropriadas
 
 ═══════════════════════════════════════════════════════════════
         

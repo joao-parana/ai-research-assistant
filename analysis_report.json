@@ -1,0 +1,138 @@
+{
+  "project_name": "",
+  "analysis": {
+    "python_files": [
+      {
+        "name": "__init__.py",
+        "path": "tests/__init__.py",
+        "lines": 3
+      },
+      {
+        "name": "test_readme_parser.py",
+        "path": "tests/test_readme_parser.py",
+        "lines": 339
+      },
+      {
+        "name": "test_ai_research_assistant.py",
+        "path": "tests/test_ai_research_assistant.py",
+        "lines": 129
+      },
+      {
+        "name": "test_metadata_extraction.py",
+        "path": "tests/test_metadata_extraction.py",
+        "lines": 208
+      },
+      {
+        "name": "quick_start.py",
+        "path": "examples/quick_start.py",
+        "lines": 55
+      },
+      {
+        "name": "smart_detection_demo.py",
+        "path": "examples/smart_detection_demo.py",
+        "lines": 179
+      },
+      {
+        "name": "ai_research_assistant.py",
+        "path": "src/ai_research_assistant/ai_research_assistant.py",
+        "lines": 711
+      },
+      {
+        "name": "integrate_mcps.py",
+        "path": "src/ai_research_assistant/integrate_mcps.py",
+        "lines": 326
+      },
+      {
+        "name": "__init__.py",
+        "path": "src/ai_research_assistant/__init__.py",
+        "lines": 45
+      },
+      {
+        "name": "cli.py",
+        "path": "src/ai_research_assistant/cli.py",
+        "lines": 15
+      },
+      {
+        "name": "readme_parser.py",
+        "path": "src/ai_research_assistant/readme_parser.py",
+        "lines": 337
+      },
+      {
+        "name": "demo_usage.py",
+        "path": "src/ai_research_assistant/demo_usage.py",
+        "lines": 319
+      }
+    ],
+    "data_files": [
+      ".zed/settings.json"
+    ],
+    "config_files": [
+      "pyproject.toml"
+    ],
+    "total_lines": 2666,
+    "imports": [
+      "from ai_research_assistant import (",
+      "from ai_research_assistant import AIResearchAssistant",
+      "from ai_research_assistant import AIResearchAssistant, Paper, ResearchArea",
+      "from ai_research_assistant import AIResearchAssistant, ProjectMetadataExtractor",
+      "from ai_research_assistant import AIResearchAssistant, ResearchArea",
+      "from ai_research_assistant import ProjectMetadata",
+      "from ai_research_assistant.ai_research_assistant import (",
+      "from ai_research_assistant.ai_research_assistant import main as assistant_main",
+      "from ai_research_assistant.readme_parser import (",
+      "from ai_research_assistant.readme_parser import ReadmeParser, ResearchMetadata",
+      "from dataclasses import dataclass",
+      "from dataclasses import dataclass, field",
+      "from enum import StrEnum",
+      "from pathlib import Path",
+      "from sklearn.ensemble import RandomForestClassifier",
+      "from sklearn.model_selection import train_test_split",
+      "from tensorflow.keras import layers, models",
+      "from typing import Any",
+      "from typing import Protocol",
+      "import argparse",
+      "import json",
+      "import pytest",
+      "import re",
+      "import sys",
+      "import tensorflow as tf",
+      "import tomli  # Para ler pyproject.toml",
+      "import torch",
+      "import torch.nn as nn",
+      "import traceback"
+    ]
+  },
+  "research": {
+    "query": "partial discharge detection machine learning",
+    "results": [
+      {
+        "title": "Benchmarking ML/DL for Fault Detection",
+        "accuracy": 86.82,
+        "methods": [
+          "Random Forest",
+          "XGBoost",
+          "1D-CNN"
+        ],
+        "url": "https://hf.co/papers/2505.06295"
+      },
+      {
+        "title": "AI Transformers for Power Quality",
+        "accuracy": 99.81,
+        "methods": [
+          "Attention Transformers"
+        ],
+        "url": "https://hf.co/papers/2402.14949"
+      }
+    ]
+  },
+  "recommendations": [
+    "📊 Projeto grande detectado. Considere modularizar ainda mais.",
+    "🤖 Melhor accuracy encontrada: 99.81% usando Attention Transformers",
+    "📚 Leia: AI Transformers for Power Quality - https://hf.co/papers/2402.14949",
+    "🧪 Adicione testes unitários com pytest",
+    "📝 Use type hints em todas as funções (Python 3.13)",
+    "🔒 Implemente validação de dados com Pydantic",
+    "🚀 Configure CI/CD para testes automáticos",
+    "📊 Adicione logging estruturado"
+  ]
+}

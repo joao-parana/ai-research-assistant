@@ -119,7 +119,7 @@ O sistema:
 
 📦 METADADOS DO PROJETO:
    • Nome: ai-research-assistant
-   • Versão: 1.0.0
+   • Versão: 0.5.0
    • Keywords: mcp, Model Context Protocol, ai, research
    • Dependências: 6 principais
 

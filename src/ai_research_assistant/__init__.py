@@ -13,19 +13,18 @@ Features:
 - 📄 Leitura e interpretação de README.md estruturado (4ª fonte!)
 """
 
-__version__ = "1.0.0"
+__version__ = "0.5.0"
 __author__ = "João"
 
 from ai_research_assistant.ai_research_assistant import (
     AIResearchAssistant,
-    Paper,
     Model,
+    Paper,
     ProjectAnalysis,
     ProjectMetadata,
     ProjectMetadataExtractor,
     ResearchArea,
 )
-
 from ai_research_assistant.readme_parser import (
     ReadmeParser,
     ResearchMetadata,

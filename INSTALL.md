@@ -191,13 +191,13 @@ hatch build
 ```
 
 Isso cria:
-- `dist/ai_research_assistant-1.0.0.tar.gz` (source distribution)
-- `dist/ai_research_assistant-1.0.0-py3-none-any.whl` (wheel)
+- `dist/ai_research_assistant-0.5.0.tar.gz` (source distribution)
+- `dist/ai_research_assistant-0.5.0-py3-none-any.whl` (wheel)
 
 ### Instalar localmente a partir do wheel
 
 ```bash
-pip install dist/ai_research_assistant-1.0.0-py3-none-any.whl
+pip install dist/ai_research_assistant-0.5.0-py3-none-any.whl
 ```
 
 ## Troubleshooting

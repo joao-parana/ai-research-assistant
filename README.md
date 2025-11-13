@@ -28,7 +28,14 @@
 ### Instalação
 
 ```bash
-cd /Users/joao/dev/code_with_ai/claude/claude/python/ai-research-assistant
+pip install ai-research-assistant
+```
+
+OU se desejar contribuir via Fork
+
+```bash
+git clone git@github.com:your_github_account/ai-research-assistant.git
+cd $HOME/dev/NIE/ai-research-assistant
 
 # Usando Hatch (recomendado)
 hatch env create
@@ -50,10 +57,10 @@ pip-compile --extra dev -o dev-requirements.txt pyproject.toml
 
 ```bash
 # Usando script instalado
-ai-research-assistant /path/to/your/project
+ai-research-assistant /path/to/your/research/project
 
 # Ou diretamente
-python -m ai_research_assistant.ai_research_assistant /path/to/your/project
+python -m ai_research_assistant.ai_research_assistant /path/to/your/research/project
 ```
 
 #### 2️⃣ Demo Interativa
@@ -66,6 +73,7 @@ mcp-demo
 
 ```bash
 # Analisar projeto específico
+cd ..
 mcp-analyze --project ./gamma-pd-analytics
 
 # Exportar relatório JSON
