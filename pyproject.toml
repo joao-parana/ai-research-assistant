@@ -1,0 +1,173 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-server"
+version = "0.5.0"
+description = "AI Research Assistant - Integração completa de MCPs com Python 3.13"
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+keywords = ["mcp", "Model Context Protocol", "ai", "research", "machine-learning", "huggingface"]
+authors = [
+    { name = "João", email = "joao@example.com" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.26.0",
+    "pandas>=2.1.0",
+    "matplotlib>=3.8.0",
+    "scipy>=1.11.0",
+    "pydantic>=2.5.0",
+    "tomli>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.7.0",
+    "pip-tools",
+]
+
+# Alé de `dev` podemos usar outras seções no elemento `project.optional-dependencies`
+# ------------------------------------------------------------------------------------------
+# Nome da Seção     Propósito Comum
+# ------------------------------------------------------------------------------------------
+# test              "Dependências necessárias para executar os testes do pacote (ex: pytest, coverage).
+#                   Muitas vezes tratada como dev ou como um grupo de dependência separado."
+# docs              "Dependências necessárias para gerar a documentação (ex: sphinx, mkdocs, temas)."
+# all               "Uma seção que inclui todas as outras dependências opcionais, permitindo
+#                   ao usuário instalar a funcionalidade completa do pacote (ex: all = [ ""gui"", ""cli"" ])."
+# cli               "Dependências necessárias apenas se o usuário for usar a interface de
+#                   linha de comando do seu pacote (ex: click, rich)."
+# gui               "Dependências para integrações de interface gráfica (ex: PyQt5, tkinter)."
+# aws / azure / gcp "Dependências para integração com um serviço específico (ex: boto3 para AWS)."
+# speed/performance "Dependências opcionais que adicionam otimizações de velocidade (ex: orjson, módulos C)."
+# ------------------------------------------------------------------------------------------
+# o Hatch segue as diretrizes do empacotamento Python (PEP 621) e, por padrão, não inclui as
+# dependências definidas em [project.optional-dependencies] (como dev, test e docs) nos
+# metadados de dependência principal do pacote gerada na etapa de build
+
+[project.urls]
+Documentation = "https://github.com/joao/mcp-server#readme"
+Issues = "https://github.com/joao/mcp-server/issues"
+Source = "https://github.com/joao/mcp-server"
+
+[project.scripts]
+mcp-server = "mcp_server.cli:main"
+mcp-analyze = "mcp_server.integrate_mcps:main"
+mcp-demo = "mcp_server.demo_usage:main"
+
+[tool.hatch.version]
+path = "src/mcp_server/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/tests",
+    "/README.md",
+    "/LICENSE",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mcp_server"]
+
+[tool.hatch.envs.default]
+dependencies = [
+    "pytest",
+    "pytest-cov",
+]
+
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+test-cov = "pytest --cov=src/mcp_server --cov-report=term-missing {args:tests}"
+cov-report = "pytest --cov=src/mcp_server --cov-report=html"
+
+[tool.hatch.envs.lint]
+detached = true
+dependencies = [
+    "black",
+    "ruff",
+    "mypy",
+]
+
+[tool.hatch.envs.lint.scripts]
+typing = "mypy --install-types --non-interactive {args:src/mcp_server tests}"
+style = [
+    "ruff {args:.}",
+    "black --check --diff {args:.}",
+]
+fmt = [
+    "black {args:.}",
+    "ruff --fix {args:.}",
+    "style",
+]
+all = [
+    "style",
+    "typing",
+]
+
+[tool.black]
+target-version = ["py313"]
+line-length = 100
+skip-string-normalization = false
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+    "C901",  # too complex
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.mypy]
+python_version = "3.13"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+follow_imports = "normal"
+strict_optional = true
+
+[[tool.mypy.overrides]]
+module = [
+    "scipy.*",
+    "matplotlib.*",
+]
+ignore_missing_imports = true
